@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/bash /ppt/auto_ppt.sh
+X-GNOME-Autostart-enabled=true

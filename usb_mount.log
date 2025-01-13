@@ -1,0 +1,23 @@
+
+##### do_mount
+lun. 13 janv. 2025 13:02:00 CET
+/dev/sdb1 is mounted at /media/PPT
+mounted /dev/sdb1 on /media/PPT
+##### do_find
+lun. 13 janv. 2025 13:02:00 CET
+found /media/PPT/presentation.pptx
+new md5 of /media/PPT/presentation.pptx
+1774e3645132835f4512ebd35ce78d7c
+check /ppt
+/ppt exists
+check presentation.pptx
+presentation.pptx exists
+/ppt/presentation.pptx exists
+previous md5 of /ppt/presentation.pptx
+1774e3645132835f4512ebd35ce78d7c
+##### do_copy
+lun. 13 janv. 2025 13:02:01 CET
+same md5
+##### do_start
+lun. 13 janv. 2025 13:02:01 CET
+DISPLAY is :0

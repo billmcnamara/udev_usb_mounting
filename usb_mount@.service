@@ -1,0 +1,9 @@
+[Unit]
+Description=USB Mount Service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/local/bin/usb_mount.sh add %i
+ExecStop=/usr/local/bin/usb_mount.sh remove %i
+

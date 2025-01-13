@@ -7,6 +7,8 @@ else
   echo "you are root"
 fi
 
+THE_USERNAME=user
+
 echo "service"
 cp usb_mount@.service /etc/systemd/system/usb_mount@.service
 chmod a+rx /etc/systemd/system/usb_mount@.service
@@ -16,14 +18,14 @@ cp usb_mount.sh /usr/local/bin/usb_mount.sh
 chmod a+rx /usr/local/bin/usb_mount.sh
 
 echo "autostart"
-mkdir ~/.config/autostart/ &> /dev/null
-cat > ~/.config/autostart/ppt.desktop << "EOC"
+mkdir /home/${THE_USERNAME}/.config/autostart/ &> /dev/null
+cat > /home/${THE_USERNAME}/.config/autostart/ppt.desktop << "EOC"
 [Desktop Entry]
 Type=Application
 Exec=/bin/bash /ppt/auto_ppt.sh
 X-GNOME-Autostart-enabled=true
 EOC
-chmod a+r ~/.config/autostart/ppt.desktop
+chmod a+r /home/${THE_USERNAME}/.config/autostart/ppt.desktop
 
 cat > /ppt/auto_ppt.sh << "EOAS"
 #!/bin/bash
@@ -83,6 +85,3 @@ udevadm control -l debug
 udevadm control --reload-rules
 echo "reload"
 systemctl daemon-reload
-
-
-

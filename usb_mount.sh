@@ -64,8 +64,6 @@ do_find()
 	 mkdir -p ${TARGET_DIR}									&>/dev/null
  fi
  cd ${TARGET_DIR}
-
- TARGET_FILE="presentation.pptx"
  echo "check ${TARGET_FILE}"								>> "${LOG_FILE}"
  if [ -f "${TARGET_FILE}" ]; then
          echo "${TARGET_FILE} exists"						>> "${LOG_FILE}"

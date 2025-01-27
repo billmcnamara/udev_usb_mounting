@@ -116,6 +116,8 @@ do_start()
 
   sudo -u ${MOUNT_USER}  DISPLAY=${DISPLAYIS}  XAUTHORITY=/home/${MOUNT_USER}/.Xauthority libreoffice --impress --norestore --show "${DESTINATION}" > /dev/null 2>&1 &
  else
+  mkdir -p ${TARGET_DIR}            &>/dev/null
+  cd ${TARGET_DIR}
   echo "no file at ${DESTINATION}"							>> "${LOG_FILE}"
   echo "1234"												> "${MD5_FILE}"
  fi
@@ -125,7 +127,7 @@ do_mount()
 {
   cd ${TARGET_DIR}
   echo ""													 > ${LOG_FILE}
-  echo "### do_mount"										>> "${LOG_FILE}"
+  echo "### do_mount"							>> "${LOG_FILE}"
   date														>> "${LOG_FILE}"
    if [[ -n ${USB_MOUNT} ]]; then
 	echo "${DEVICE} is already mounted at ${USB_MOUNT}"  	>> "${LOG_FILE}"
@@ -162,8 +164,8 @@ do_mount()
 do_unmount()
 {
   cd ${TARGET_DIR}
-  echo ""													 > ${LOG_FILE}
-  echo "### do_unmount"										>> "${LOG_FILE}"
+  echo ""													>> ${LOG_FILE}
+  echo "### do_unmount"						>> "${LOG_FILE}"
   date														>> "${LOG_FILE}"
    if [[ -z ${USB_MOUNT} ]]; then
 	echo "${DEVICE} is not mounted"							>> "${LOG_FILE}"
